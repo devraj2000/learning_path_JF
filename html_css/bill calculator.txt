@@ -1,0 +1,92 @@
+the HTML part:
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="billcalc.css"> 
+
+<script type="text/javascript">
+
+function calculateTotalPrice()
+
+{
+
+var pname =document.getElementById("productName");
+
+var price =document.getElementsByName("price") [0].value;
+
+var quantity = document.getElementsByName("qty")[0].value;
+
+var totalprice = quantity*price;
+
+document.getElementById("totalprice").innerHTML = totalprice;
+
+return false;
+
+}
+</script>
+
+</head>
+
+<body>
+    <h1>Bill calculator</h1>
+    <form onsubmit= "return calculateTotalPrice()">
+        <table>
+            <tr>
+                <td>
+                    <label for ="productName">product Name</label>
+                </td>
+                <td>
+                    <input type="text" id="productName" Name="productName" placeholder="product Name" required>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="price">product price in Rs. </label></td>
+                <td><input type="number" id="price" Name="price" placeholder="product price" required></td>
+            </tr>
+            <tr>
+                <td><label for="qty">quantity</label> </td>
+                <td><input type="number" id="qty" Name="qty" min="1" placeholder="enter quantity" required></td>
+            </tr>
+            <tr>
+                 <td><label for="totalprice">totalprice in Rs.</label> </td>
+                 <td><output id="totalprice" for ="price qty"></output></td>
+            </tr>
+            <tr>
+                <td><input type="submit" id="submit" value="submit"><br></td>
+            </tr>
+        </table>
+    </form>
+</body>
+    
+</html>
+
+
+
+
+
+the css part:
+
+
+h1{
+   text-align:center;
+   color:#FF00FF;
+   font-style:italic;
+   font-weight:bold;
+ }
+
+ table{
+     text-align:left;
+     margin-left:35%;
+     border-spacing:10px;
+     border-width:10%;
+     border-style:solid;
+     background-color:#F899A4;
+     
+
+ }
+ td{
+     border-style:ridge;
+     padding:10px;
+ }

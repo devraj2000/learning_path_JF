@@ -1,0 +1,60 @@
+the html part:
+
+<html>
+	<head>
+    <script src="script.js" type="text/javascript"> </script>
+  </head>
+  <body> 
+    
+    <h2>Feedback for the ART OFLIVING session</h2><br>
+
+    <label for="feedback">Enter the Feedback: </label>
+
+    <input type="text" id="feedback" name="feedback" height="40" ><br>
+
+    <button type="button"
+
+    id="create"
+    
+    onclick="addFeedback()"> Add Feedback </button><br>
+    
+    <button type="button"
+    
+    id="view"
+    
+    onclick="displayFeedback()"> View
+    
+    Feedback </button><br>
+    
+    <div id="result" name="inner">
+    
+    Feedback Details<br> <text
+    
+    name="inner">Successfully Added Feedback Details!</text>
+
+</div>
+  </body>
+</html>
+
+
+
+the JS part:
+
+var feed=[];
+function addFeedback(){
+ var
+    x=document.getElementById("feedback").value; feed.push(x);
+}
+
+function displayFeedback(){
+    var i=0;
+
+    var res="";
+
+    for(i=0; i<feed.length; i++) res=res+"Feedback "+(i+1)+" <br/>"+feed[i]+"<br/>";
+
+    document.getElementsByName("inner") [1].innerHTML = res;
+
+    feed= [];
+    
+}
