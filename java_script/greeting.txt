@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+<body>
+<form name="frm1"  >
+    <h1>ELITE COACHING CENTER</h1>
+    
+                    <table border ="1">
+                        
+                        <tr>
+                          
+                           
+                         <td>
+                         <label for="sname">Student Name</label>
+                                            
+                          <input type="text" id="sname"  required>
+                        </td> 
+                      </tr>
+                  <tr>
+                   <td>
+                    <label for="course">Course</label>
+                            <select name="course" id="course" required>
+                                    <option value="Python">Python</option>
+                                    <option value="Java">Java</option>
+                                    <option value="Oracle">Oracle</option>
+                            </select>
+                    </td>
+                </tr>
+              </table>
+              <br>
+              <br>
+                <input type="button" id="submit" value="register" onclick="display()"/>
+                <p id="greet"></p>
+
+ </form>            
+ <script src="script.js"></script> 
+</body>    
+</html>
+
+
+
+js part:
+
+
+
+function display(){
+    var name=document.getElementById("sname").value;
+    var courses=document.getElementById("course").value;
+    if(!name){
+        document.getElementById("greet").innerHTML="Name cannot be empty";
+    }else{
+        document.getElementById("greet").innerHTML="Hi,"+name+". You have successfully registered for the "+courses+ " course.";
+    }
+    
+}

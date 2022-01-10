@@ -1,0 +1,15 @@
+function modifyString(str)
+{
+    var removeWhiteSpace=str.replace(/\s+/g, '');
+    return removeWhiteSpace.toLowerCase();
+}
+
+function uniqueCharacters(str)
+{
+ var s=modifyString(str);
+ var result=new Set(s)
+  result=Array.from(result).join('')
+  return result
+
+}
+console.log(uniqueCharacters("Welcome to the Javascript course"));

@@ -1,0 +1,12 @@
+function validateEmail(email) 
+{ 
+ var reg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+ if (reg.test(email)){
+ return ("Valid email address!"); 
+}
+ else{
+ return ("Invalid email address!");
+ } 
+} 
+console.log(validateEmail('info123@example.com'));
+console.log(validateEmail('abc-defmail.com'));
