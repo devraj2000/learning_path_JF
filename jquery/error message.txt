@@ -1,0 +1,41 @@
+the HTML part:
+
+
+<!-- DO NOT ALTER THIS FILE -->
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+  
+    <button id="btn-id">Click to Get the Employee Data</button>
+<br><br>
+    <div id="err-id"></div>
+    
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <script src="employee.js"></script>
+ 
+</body>
+</html>
+
+
+the JS part:
+
+
+//WRITE YOUR jQUERY CODE HRE
+
+$("#btn-id").click(function(){
+    $.ajax({
+        url:'employee.json',
+        dataType:'json',
+        success: function(data){
+            $("#err-id").html('Success Message: File found');
+        },
+        statusCode:{
+            404: function() {
+           $("#err-id").html('Error Message: Not found');
+         }
+        }
+    });
+});
